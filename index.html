@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placement Preparation Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Student productivity dashboard</p>
+        <h1>Placement Preparation Tracker</h1>
+        <p class="subtitle">
+          Organize coding practice, aptitude prep, mock interviews, and applications in one place.
+        </p>
+      </div>
+      <button id="themeToggle" class="ghost-btn">Toggle Theme</button>
+    </header>
+
+    <section class="dashboard">
+      <div class="card form-card">
+        <div class="card-head">
+          <h2 id="formTitle">Add New Task</h2>
+          <span class="muted">Saved automatically in your browser</span>
+        </div>
+
+        <form id="taskForm">
+          <div class="grid-2">
+            <input type="text" id="title" placeholder="Task title" required />
+            <input type="date" id="deadline" required />
+
+            <select id="category" required>
+              <option value="">Select category</option>
+              <option value="Coding">Coding</option>
+              <option value="Aptitude">Aptitude</option>
+              <option value="Mock Interview">Mock Interview</option>
+              <option value="Company Application">Company Application</option>
+              <option value="Resume">Resume</option>
+            </select>
+
+            <select id="priority" required>
+              <option value="">Select priority</option>
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+
+            <input class="full" type="text" id="note" placeholder="Optional note" />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="primary-btn" id="submitBtn">Add Task</button>
+            <button type="button" class="secondary-btn" id="resetBtn">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card stats-card">
+        <div class="card-head">
+          <h2>Progress Overview</h2>
+          <span class="muted" id="streakText">Keep the momentum going</span>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat">
+            <h3 id="totalCount">0</h3>
+            <p>Total</p>
+          </div>
+          <div class="stat">
+            <h3 id="doneCount">0</h3>
+            <p>Completed</p>
+          </div>
+          <div class="stat">
+            <h3 id="dueSoonCount">0</h3>
+            <p>Due Soon</p>
+          </div>
+          <div class="stat">
+            <h3 id="overdueCount">0</h3>
+            <p>Overdue</p>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-label">
+            <span>Completion</span>
+            <span id="progressText">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <div class="chart-wrap">
+          <canvas id="statusChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="card toolbar-card">
+      <div class="toolbar">
+        <input type="text" id="searchInput" placeholder="Search tasks..." />
+
+        <select id="filterCategory">
+          <option value="All">All Categories</option>
+          <option value="Coding">Coding</option>
+          <option value="Aptitude">Aptitude</option>
+          <option value="Mock Interview">Mock Interview</option>
+          <option value="Company Application">Company Application</option>
+          <option value="Resume">Resume</option>
+        </select>
+
+        <select id="filterStatus">
+          <option value="All">All Status</option>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
+
+        <select id="filterPriority">
+          <option value="All">All Priority</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+
+        <select id="sortBy">
+          <option value="deadline">Sort by Deadline</option>
+          <option value="priority">Sort by Priority</option>
+          <option value="title">Sort by Title</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="card list-card">
+      <div class="card-head">
+        <h2>Your Tasks</h2>
+        <button class="danger-btn" id="clearAllBtn">Clear All</button>
+      </div>
+      <div id="taskList" class="task-list"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
