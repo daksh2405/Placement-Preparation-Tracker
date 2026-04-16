@@ -23,7 +23,7 @@ A responsive web-based dashboard to organize and track placement preparation inc
 ![Dashboard Screenshot](light_mode.png)
 
 ## 🌐 Live Demo
-(Will add after deployment)
+https://daksh2405.github.io/Placement-Preparation-Tracker/
 
 ## 📌 How to Run
 1. Download the project
