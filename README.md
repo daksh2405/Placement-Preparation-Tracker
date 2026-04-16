@@ -19,7 +19,8 @@ A responsive web-based dashboard to organize and track placement preparation inc
 - Chart.js
 
 ## 📷 Preview
-(Add screenshot here)
+![Dashboard Screenshot](dark_mode.png)
+![Dashboard Screenshot](light_mode.png)
 
 ## 🌐 Live Demo
 (Will add after deployment)
